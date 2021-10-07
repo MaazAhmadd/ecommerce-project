@@ -15,10 +15,13 @@ const AboutPage = () => {
             <div className="underline"></div>
           </div>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-            voluptatibus vitae perferendis officia placeat. Eaque, ipsa rerum
-            nihil assumenda qui ullam eveniet facilis nemo maxime magni culpa
-            quos autem! Suscipit!
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Exercitationem, beatae voluptatibus. Perferendis distinctio minus a
+            laborum voluptatum in iste consequuntur veritatis eius vitae, saepe
+            reiciendis magnam minima maxime? Rem suscipit molestiae, aliquid
+            iste, sed repellendus odit soluta harum expedita nisi molestias
+            laboriosam earum, deserunt quos recusandae iusto enim cum?
+            Perspiciatis?
           </p>
         </article>
       </Wrapper>
