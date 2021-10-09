@@ -58,7 +58,7 @@ export const ProductsProvider = ({ children }) => {
       dispatch({ type: GET_SINGLE_PRODUCT_ERROR });
     }
   };
-  let commerce;
+
   useEffect(() => {
     fetchProducts(url);
   }, []);
