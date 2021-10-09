@@ -1,11 +1,54 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
+import React, { useState } from "react";
+import styled from "styled-components";
 
-const ProductImages = () => {
-  return <h4>product images</h4>
-}
+const ProductImages = ({ images = [{ url: "" }] }) => {
+  const [main, setMain] = useState(images[0]);
+  // const [styles, setStyles] = useState({
+  //   backgroundImage: `url(${main.url})`,
+  //   backgroundPosition: "0% 0%",
+  // });
+
+  // const handleMouseMove = (e) => {
+  //   const { left, top, width, height } = e.target.getBoundingClientRect();
+  //   const x = ((e.pageX - left) / width) * 100;
+  //   const y = ((e.pageY - top) / height) * 100;
+  //   setStyles({
+  //     backgroundImage: `url(${main.url})`,
+  //     backgroundPosition: `${x}% ${y}%`,
+  //   });
+  // };
+
+  return (
+    <Wrapper>
+      {/* <figure onMouseMove={(e) => handleMouseMove(e)} style={styles}>
+        <img src={main.url} alt="main image" className="main" />
+      </figure> */}
+      <img src={main.url} alt="main image" className="main" />
+      <div className="gallery">
+        {images.map((image, index) => {
+          return (
+            <img
+              src={image.url}
+              alt={image.filename}
+              key={index}
+              onClick={() => setMain(images[index])}
+              className={`${image.url === main.url ? "active" : null}`}
+            />
+          );
+        })}
+      </div>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.section`
+  /* figure {
+    width: 600px;
+    background-repeat: no-repeat;
+  }
+  figure:hover img {
+    opacity: 0;
+  } */
   .main {
     height: 600px;
   }
@@ -48,6 +91,6 @@ const Wrapper = styled.section`
       }
     }
   }
-`
+`;
 
-export default ProductImages
+export default ProductImages;
