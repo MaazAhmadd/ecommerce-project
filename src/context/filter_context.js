@@ -12,7 +12,11 @@ import {
 } from "../actions";
 import { useProductsContext } from "./products_context";
 
-const initialState = { filtered_products: [], all_products: [] };
+const initialState = {
+  filtered_products: [],
+  all_products: [],
+  grid_view: false,
+};
 
 const FilterContext = React.createContext();
 
@@ -25,7 +29,7 @@ export const FilterProvider = ({ children }) => {
   }, [products]);
 
   return (
-    <FilterContext.Provider value="filter context">
+    <FilterContext.Provider value={{ ...state }}>
       {children}
     </FilterContext.Provider>
   );
